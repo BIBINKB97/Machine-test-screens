@@ -42,12 +42,22 @@ class _LoginPageState
                 children: [
                   Text("please Sign in to continue"),
                   TextFormField(
-                    decoration: InputDecoration(hintText: "Enter Email or Mob No.", border: OutlineInputBorder(borderRadius: BorderRadius.circular(15))),
+                    decoration: InputDecoration(
+                      hintText: "Enter Email or Mob No.",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                    ),
                   ),
                   TextButton(onPressed: () {}, child: Text("Sign In With OTP")),
                   Text("Password"),
                   TextFormField(
-                    decoration: InputDecoration(hintText: "Password", border: OutlineInputBorder(borderRadius: BorderRadius.circular(15))),
+                    decoration: InputDecoration(
+                      hintText: "Password",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                    ),
                   ),
                   Row(
                     children: [
@@ -65,7 +75,11 @@ class _LoginPageState
                   ),
                   Container(
                     height: 50,
-                    decoration: BoxDecoration(color: const Color.fromARGB(255, 207, 207, 207), border: Border.all(color: Colors.blue), borderRadius: BorderRadius.circular(15)),
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 207, 207, 207),
+                      border: Border.all(color: Colors.blue),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
                     child: Center(
                         child: Text(
                       "Submit",
@@ -80,7 +94,7 @@ class _LoginPageState
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: const [
                 Expanded(
                   child: Divider(),
                 ),
@@ -92,6 +106,54 @@ class _LoginPageState
                   child: Divider(),
                 ),
               ],
+            ),
+            SizedBox(
+              height: 55,
+              width: 300,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
+                  Image(image: AssetImage("assets/images/google.png")),
+                  Image(image: AssetImage("assets/images/LinkedIn.png")),
+                  Image(image: AssetImage("assets/images/FB.png")),
+                  Image(image: AssetImage("assets/images/Instagram.png")),
+                  Image(image: AssetImage("assets/images/Whatsapp.png")),
+                ],
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Business User?"),
+                    Text("Login Here")
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text("Don't have an account"),
+                    Text("Sign Up")
+                  ],
+                ),
+              ],
+            ),
+            RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                style: TextStyle(fontSize: 15, color: Colors.black),
+                children: const [
+                  TextSpan(
+                    text: "By continuing, you agree to\nPromilo's ",
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  TextSpan(
+                    text: "Terms of Use & Privacy Policy.",
+                  ),
+                ],
+              ),
             )
           ],
         ),
