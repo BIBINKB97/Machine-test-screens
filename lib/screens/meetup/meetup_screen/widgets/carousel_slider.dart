@@ -34,14 +34,14 @@ class _CustomCarouselState
           children: [
            
             CarouselSlider(
-              items: [
+              items: const [
                 CarouselImgContainer(image: "assets/images/meet1.jpg"),
                 CarouselImgContainer(image: "assets/images/meet2.jpg"),
                 CarouselImgContainer(image: "assets/images/meet3.jpg"),
                
               ],
               options: CarouselOptions(
-                height: 200,
+                height: 190,
                 enlargeCenterPage: true,
                 autoPlay: true,
                 aspectRatio: 16 / 9,
