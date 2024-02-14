@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:machine_test/screens/login_screen/widgets/text_style.dart';
+import 'package:machine_test/screens/meetup/description_screen/description.dart';
 import 'package:machine_test/utils.dart';
 
 class NumberCard
@@ -14,15 +15,21 @@ class NumberCard
           context) {
     return Stack(
       children: [
-        Card(
-          child:
-              Container(
-            width: 175,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              image: DecorationImage(
-                fit: BoxFit.fill,
-                image: AssetImage("assets/images/vijay.jpg"),
+        InkWell(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (contex) => DescriptionPage()),
+            );
+          },
+          child: Card(
+            child: Container(
+              width: 175,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage("assets/images/vijay.jpg"),
+                ),
               ),
             ),
           ),
