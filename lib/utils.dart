@@ -32,3 +32,5 @@ const kdeepblue = Color.fromARGB(
 const kblack54 =
     Colors
         .black54;
+        const kSkyblue =
+    Color.fromARGB(255, 91, 202, 253);

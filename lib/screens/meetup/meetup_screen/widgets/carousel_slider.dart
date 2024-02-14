@@ -21,7 +21,6 @@ class _CustomCarouselState
         CustomCarousel> {
   int _currentIndex =
       0;
-
   @override
   Widget build(
       BuildContext
@@ -32,20 +31,16 @@ class _CustomCarouselState
       children: [
         Stack(
           children: [
-           
             CarouselSlider(
               items: const [
                 CarouselImgContainer(image: "assets/images/meet1.jpg"),
                 CarouselImgContainer(image: "assets/images/meet2.jpg"),
                 CarouselImgContainer(image: "assets/images/meet3.jpg"),
-               
               ],
               options: CarouselOptions(
-                height: 190,
-                enlargeCenterPage: true,
                 autoPlay: true,
-                aspectRatio: 16 / 9,
                 enableInfiniteScroll: true,
+                enlargeCenterPage: true,
                 autoPlayAnimationDuration: Duration(milliseconds: 800),
                 viewportFraction: 1.0,
                 onPageChanged: (index, reason) {

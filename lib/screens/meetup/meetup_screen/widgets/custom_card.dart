@@ -12,23 +12,24 @@ class CustomCard
       BuildContext
           context) {
     return Container(
+    
       height:
           215,
       margin:
           EdgeInsets.symmetric(
-        horizontal: 20,
+        horizontal: 10,
       ),
       child:
           Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 180,
-            width: 300,
+            height: 170,
+            width: 290,
             decoration: BoxDecoration(border: Border.all(color: kgrey), borderRadius: BorderRadius.circular(10)),
             child: Column(children: [
               Padding(
-                padding: const EdgeInsets.only(top: 15.0, left: 15),
+                padding: const EdgeInsets.only(top: 10.0, left: 10),
                 child: Row(
                   children: const [
                     CircleAvatar(
@@ -66,8 +67,8 @@ class CustomCard
                 ),
               ),
               Divider(
-                indent: 15,
-                endIndent: 15,
+                indent: 10,
+                endIndent: 10,
               ),
               Container(
                 height: 50,
@@ -75,7 +76,7 @@ class CustomCard
                   alignment: AlignmentDirectional.center, // Ensure horizontal alignment
                   children: const [
                     Positioned(
-                      left: 15.0,
+                      left: 10.0,
                       child: CircleAvatar(
                         radius: 23,
                         backgroundImage: AssetImage("assets/images/th.jpg"),
@@ -113,7 +114,7 @@ class CustomCard
                 ),
               ),
               Align(
-                alignment: Alignment(0.85, 0),
+                alignment: Alignment(0.9, 0),
                 child: MaterialButton(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
                   elevation: 0.8,

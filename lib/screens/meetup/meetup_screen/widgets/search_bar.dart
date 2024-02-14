@@ -11,6 +11,8 @@ class CustomSearchBar
       BuildContext
           context) {
     return Container(
+      height:
+          50,
       decoration:
           BoxDecoration(
         border: Border.all(color: kblack, width: 1),
@@ -38,7 +40,7 @@ class CustomSearchBar
             ),
           ),
           IconButton(
-            icon: Icon(Icons.mic),
+            icon: Icon(Icons.mic_none,size: 30,),
             onPressed: () {},
           ),
         ],

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:machine_test/screens/login_screen/login_screen.dart';
+import 'package:machine_test/bottom_navbar/navbar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-   home: LoginPage(),
+   home: BottomNavBar(),
     );
   }
 }
