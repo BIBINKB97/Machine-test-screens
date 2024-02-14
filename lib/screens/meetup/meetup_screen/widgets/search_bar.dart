@@ -13,7 +13,7 @@ class CustomSearchBar
     return Container(
       decoration:
           BoxDecoration(
-        border: Border.all(color: Colors.grey),
+        border: Border.all(color: kblack, width: 1),
         borderRadius: BorderRadius.circular(10),
       ),
       padding:
@@ -32,7 +32,7 @@ class CustomSearchBar
             child: TextField(
               decoration: InputDecoration(
                 hintText: 'Search',
-                hintStyle: TextStyle(fontSize: 22, color: kgrey, fontWeight: FontWeight.w400),
+                hintStyle: TextStyle(fontSize: 22, color: kblack54, fontWeight: FontWeight.w400),
                 border: InputBorder.none,
               ),
             ),

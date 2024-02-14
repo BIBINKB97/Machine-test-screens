@@ -29,3 +29,6 @@ const kdeepblue = Color.fromARGB(
     0,
     107,
     188);
+const kblack54 =
+    Colors
+        .black54;

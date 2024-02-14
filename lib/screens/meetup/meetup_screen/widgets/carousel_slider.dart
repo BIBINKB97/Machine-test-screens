@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:machine_test/screens/login_screen/widgets/text_style.dart';
+import 'package:machine_test/screens/meetup/meetup_screen/widgets/carousel_container.dart';
 import 'package:machine_test/utils.dart';
 
 class CustomCarousel
@@ -34,25 +35,16 @@ class _CustomCarouselState
            
             CarouselSlider(
               items: [
-                Container(
-                  decoration: BoxDecoration(color: kgrey, borderRadius: BorderRadius.circular(15)),
-                  child: Center(child: Text('Slide 1')),
-                ),
-                Container(
-                  decoration: BoxDecoration(color: kLightGrey, borderRadius: BorderRadius.circular(15)),
-                  child: Center(child: Text('Slide 2')),
-                ),
-                Container(
-                  decoration: BoxDecoration(color: kblue, borderRadius: BorderRadius.circular(15)),
-                  child: Center(child: Text('Slide 3')),
-                ),
+                CarouselImgContainer(image: "assets/images/meet1.jpg"),
+                CarouselImgContainer(image: "assets/images/meet2.jpg"),
+                CarouselImgContainer(image: "assets/images/meet3.jpg"),
+               
               ],
               options: CarouselOptions(
                 height: 200,
                 enlargeCenterPage: true,
                 autoPlay: true,
                 aspectRatio: 16 / 9,
-                autoPlayCurve: Curves.fastOutSlowIn,
                 enableInfiniteScroll: true,
                 autoPlayAnimationDuration: Duration(milliseconds: 800),
                 viewportFraction: 1.0,
