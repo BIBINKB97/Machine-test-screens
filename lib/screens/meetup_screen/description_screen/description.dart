@@ -2,9 +2,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:machine_test/screens/login_screen/widgets/text_style.dart';
-import 'package:machine_test/screens/meetup/description_screen/widgets/custom_icons.dart';
-import 'package:machine_test/screens/meetup/meetup_screen/widgets/carousel_image_container.dart';
+import 'package:machine_test/screens/meetup_screen/description_screen/widgets/custom_icons.dart';
+import 'package:machine_test/screens/meetup_screen/meetup_screen/widgets/carousel_image_container.dart';
 import 'package:machine_test/utils.dart';
+import 'package:share/share.dart';
 import 'package:star_rating/star_rating.dart';
 
 class DescriptionPage
@@ -101,7 +102,11 @@ class _DescriptionPageState
                     CustomIconButton(icon: Icons.favorite_border),
                     CustomIconButton(icon: Icons.filter_center_focus_outlined, onPressed: () {}),
                     CustomIconButton(icon: Icons.star_border, onPressed: () {}),
-                    CustomIconButton(icon: Icons.share_outlined, onPressed: () {}),
+                    CustomIconButton(
+                        icon: Icons.share_outlined,
+                        onPressed: () {
+                          Share();
+                        }),
                   ],
                 ),
               ],
@@ -151,7 +156,7 @@ class _DescriptionPageState
             margin: EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: const [
                 CustomText(
                   text: "Actor Name",
                   fs: 19,
@@ -164,10 +169,11 @@ class _DescriptionPageState
                 ),
                 kHeight10,
                 Row(
-                  children: const [
+                  children: [
                     Icon(
                       Icons.access_time,
                       size: 18,
+                      color: kgrey,
                     ),
                     kWidth5,
                     CustomText(
@@ -179,10 +185,11 @@ class _DescriptionPageState
                 ),
                 kHeight10,
                 Row(
-                  children: const [
+                  children: [
                     Icon(
                       Icons.account_balance_wallet_outlined,
                       size: 18,
+                      color: kgrey,
                     ),
                     kWidth5,
                     CustomText(
@@ -204,15 +211,19 @@ class _DescriptionPageState
                   fs: 17,
                   clr: kgrey,
                 ),
-                TextButton(
-                    onPressed: () {},
-                    child: CustomText(
-                      text: "See More",
-                      fs: 18,
-                    ))
+                
               ],
             ),
-          )
+          ), 
+          Align(
+            alignment: Alignment(0.9, 1),
+            child: TextButton(
+                onPressed: () {},
+                child: CustomText(
+                  text: "See More",
+                  fs: 18,
+                )),
+          ),
         ],
       ),
     );

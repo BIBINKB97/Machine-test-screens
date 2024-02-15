@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:machine_test/screens/login_screen/widgets/text_style.dart';
-import 'package:machine_test/screens/meetup/meetup_screen/widgets/carousel_image_container.dart';
+import 'package:machine_test/screens/meetup_screen/meetup_screen/widgets/carousel_image_container.dart';
 import 'package:machine_test/utils.dart';
 
 class CustomCarousel
@@ -33,9 +33,9 @@ class _CustomCarouselState
           children: [
             CarouselSlider(
               items: const [
-                CarouselImgContainer(image: "assets/images/meet1.jpg"),
-                CarouselImgContainer(image: "assets/images/meet2.jpg"),
-                CarouselImgContainer(image: "assets/images/meet3.jpg"),
+                CarouselImgContainer(image:"assets/images/meet1.jpg"),
+                CarouselImgContainer(image:"assets/images/meet2.jpg"),
+                CarouselImgContainer(image:"assets/images/meet3.jpg"),
               ],
               options: CarouselOptions(
                 autoPlay: true,

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:machine_test/screens/login_screen/widgets/text_style.dart';
-import 'package:machine_test/screens/meetup/meetup_screen/widgets/carousel_slider.dart';
-import 'package:machine_test/screens/meetup/meetup_screen/widgets/custom_card.dart';
-import 'package:machine_test/screens/meetup/meetup_screen/widgets/number_card.dart';
-import 'package:machine_test/screens/meetup/meetup_screen/widgets/search_bar.dart';
+import 'package:machine_test/screens/meetup_screen/meetup_screen/widgets/carousel_slider.dart';
+import 'package:machine_test/screens/meetup_screen/meetup_screen/widgets/custom_card.dart';
+import 'package:machine_test/screens/meetup_screen/meetup_screen/widgets/number_card.dart';
+import 'package:machine_test/screens/meetup_screen/meetup_screen/widgets/search_bar.dart';
 
 class MeetUpPage
     extends StatelessWidget {
@@ -51,9 +51,9 @@ class MeetUpPage
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: const [
-              CustomCard(),
-              CustomCard(),
-              CustomCard(),
+              CustomCard(circleImg: "assets/images/feather.png"),
+              CustomCard(circleImg: "assets/images/film.png"),
+              CustomCard(circleImg: "assets/images/film.png"),
             ],
           ),
         ),

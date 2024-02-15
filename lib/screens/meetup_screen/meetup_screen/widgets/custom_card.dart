@@ -4,15 +4,15 @@ import 'package:machine_test/utils.dart';
 
 class CustomCard
     extends StatelessWidget {
+      final String circleImg;
   const CustomCard(
-      {super.key});
+      {super.key, required this.circleImg});
 
   @override
   Widget build(
       BuildContext
           context) {
     return Container(
-    
       height:
           215,
       margin:
@@ -31,7 +31,7 @@ class CustomCard
               Padding(
                 padding: const EdgeInsets.only(top: 10.0, left: 10),
                 child: Row(
-                  children: const [
+                  children:  [
                     CircleAvatar(
                       radius: 20,
                       backgroundColor: kblack,
@@ -41,7 +41,7 @@ class CustomCard
                         child: SizedBox(
                           height: 22,
                           child: Image(
-                            image: AssetImage("assets/images/feather.png"),
+                            image: AssetImage(circleImg),
                           ),
                         ),
                       ),
@@ -51,7 +51,7 @@ class CustomCard
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children: const [
                         CustomText(
                           text: "Author",
                           fs: 20,
@@ -73,7 +73,7 @@ class CustomCard
               Container(
                 height: 50,
                 child: Stack(
-                  alignment: AlignmentDirectional.center, // Ensure horizontal alignment
+                  alignment: AlignmentDirectional.center, 
                   children: const [
                     Positioned(
                       left: 10.0,
