@@ -8,21 +8,13 @@ import 'package:machine_test/view/widgets/text_style.dart';
 import 'package:machine_test/utils.dart';
 import 'package:provider/provider.dart';
 
+
 class LoginPage
     extends StatelessWidget {
-  LoginPage(
+  const LoginPage(
       {super.key});
 
-  final loginKey =
-      GlobalKey<FormState>();
 
-  final TextEditingController
-      usernameController =
-      TextEditingController();
-
-  final TextEditingController
-      passwordController =
-       TextEditingController();
 
   @override
   Widget build(
@@ -46,104 +38,106 @@ class LoginPage
           SingleChildScrollView(
         child: Column(
           children: [
-            Form(
-              key: loginKey,
-              child: Container(
-                padding: EdgeInsets.only(top: 30),
-                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-                child: Column(
-                  children: [
-                    CustomText(
-                      text: "Hi, Welcome Back!",
-                      clr: kdarkblue,
-                      fs: 24,
-                      fw: FontWeight.w600,
-                    ),
-                    kHeight40,
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 12),
-                          child: CustomText(
-                            text: "Please Sign in to continue",
-                            clr: kdarkblue,
-                            fs: 20,
-                            fw: FontWeight.w500,
-                          ),
+            Container(
+              padding: EdgeInsets.only(top: 30),
+              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+              child: Column(
+                children: [
+                  CustomText(
+                    text: "Hi, Welcome Back!",
+                    clr: kdarkblue,
+                    fs: 24,
+                    fw: FontWeight.w600,
+                  ),
+                  kHeight40,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 12),
+                        child: CustomText(
+                          text: "Please Sign in to continue",
+                          clr: kdarkblue,
+                          fs: 20,
+                          fw: FontWeight.w500,
                         ),
-                        CustomTextFormField(
-                          errortxt: "Invalid Mail ID",
-                          controller: loginProvider.usernameController,
-                          hintTxt: "Enter Email or Mob No.",
+                      ),
+                      CustomTextFormField(
+                        errortxt: "Invalid Mail ID",
+                        controller: loginProvider.usernameController,
+                        hintTxt: "Enter Email or Mob No.",
+                      ),
+                      Align(
+                        alignment: Alignment(1, 0),
+                        child: TextButton(
+                            onPressed: () {},
+                            child: CustomText(
+                              text: "Sign In With OTP",
+                              fs: 19,
+                              fw: FontWeight.w600,
+                            )),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 12),
+                        child: CustomText(
+                          text: "Password",
+                          clr: kdarkblue,
+                          fs: 20,
+                          fw: FontWeight.w500,
                         ),
-                        Align(
-                          alignment: Alignment(1, 0),
-                          child: TextButton(
-                              onPressed: () {},
-                              child: CustomText(
-                                text: "Sign In With OTP",
-                                fs: 19,
-                                fw: FontWeight.w600,
-                              )),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 12),
-                          child: CustomText(
-                            text: "Password",
-                            clr: kdarkblue,
-                            fs: 20,
-                            fw: FontWeight.w500,
-                          ),
-                        ),
-                        CustomTextFormField(
-                          errortxt: "Incorrect Password",
-                          controller: loginProvider.passwordController,
-                          hintTxt: "Enter Password",
-                          obscureText: true,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Checkbox(
-                                  value: false,
-                                  onChanged: (value) {},
-                                ),
-                                CustomText(
-                                  text: "Remember Me",
-                                  clr: kgrey,
-                                  fs: 18,
-                                ),
-                              ],
-                            ),
-                            TextButton(
-                              onPressed: () {},
-                              child: CustomText(
-                                text: "Forget Password",
-                                fs: 19,
-                                fw: FontWeight.w600,
+                      ),
+                      CustomTextFormField(
+                        errortxt: "Incorrect Password",
+                        controller: loginProvider.passwordController,
+                        hintTxt: "Enter Password",
+                        obscureText: true,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Checkbox(
+                                value: false,
+                                onChanged: (value) {},
                               ),
-                            ),
-                          ],
-                        ),
-                        CustomButton(onPressed: () {
-                          apiProvider.postData(
-                              UserModel(
-                                username: loginProvider.usernameController.text,
-                                password: loginProvider.passwordController.text,
+                              CustomText(
+                                text: "Remember Me",
+                                clr: kgrey,
+                                fs: 18,
                               ),
-                              context);
-                          loginProvider.usernameController.clear();
-                          loginProvider.passwordController.clear();
-                        })
-                      ],
-                    ),
-                  ],
-                ),
+                            ],
+                          ),
+                          TextButton(
+                            onPressed: () {},
+                            child: CustomText(
+                              text: "Forget Password",
+                              fs: 19,
+                              fw: FontWeight.w600,
+                            ),
+                          ),
+                        ],
+                      ),
+                      CustomButton(
+                        onPressed: loginProvider.isButtonEnabled
+                            ? () {
+                                apiProvider.postData(
+                                    UserModel(
+                                      username: loginProvider.usernameController.text,
+                                      password: loginProvider.passwordController.text,
+                                    ),
+                                    context);
+                                loginProvider.usernameController.clear();
+                                loginProvider.passwordController.clear();
+                              }
+                            : null,
+                        borderClr: Provider.of<LoginScreenProvider>(context).isButtonEnabled ? kblue : kwhite,
+                      )
+                    ],
+                  ),
+                ],
               ),
             ),
             Container(

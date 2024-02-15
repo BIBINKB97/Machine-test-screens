@@ -6,9 +6,12 @@ class CustomButton
     extends StatelessWidget {
   final VoidCallback?
       onPressed;
+  final Color
+      borderClr;
   const CustomButton(
       {super.key,
-      required this.onPressed});
+      required this.onPressed,
+      required this.borderClr});
 
   @override
   Widget build(
@@ -23,7 +26,7 @@ class CustomButton
         height: 50,
         decoration: BoxDecoration(
           color: kLightGrey,
-          border: Border.all(color: kblue, width: 2),
+          border: Border.all(color: borderClr, width: 2),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Center(

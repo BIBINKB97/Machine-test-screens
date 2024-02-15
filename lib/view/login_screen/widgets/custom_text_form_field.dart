@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:machine_test/controller/provider/login_provider.dart';
+import 'package:provider/provider.dart';
 
 class CustomTextFormField
     extends StatelessWidget {
@@ -30,7 +32,10 @@ class CustomTextFormField
       BuildContext
           context) {
     return TextFormField(
-
+onChanged:
+          (text) {
+        Provider.of<LoginScreenProvider>(context, listen: false).updateButtonState();
+      },
       validator:
           (value) {
         if (value!.isEmpty) {
