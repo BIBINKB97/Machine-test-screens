@@ -1,36 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:machine_test/screens/login_screen/widgets/custom_text_form_field.dart';
-import 'package:machine_test/screens/login_screen/widgets/text_style.dart';
+import 'package:machine_test/model/user_model.dart';
+import 'package:machine_test/controller/provider/api_provider.dart';
+import 'package:machine_test/controller/provider/login_provider.dart';
+import 'package:machine_test/view/login_screen/widgets/custom_button.dart';
+import 'package:machine_test/view/login_screen/widgets/custom_text_form_field.dart';
+import 'package:machine_test/view/widgets/text_style.dart';
 import 'package:machine_test/utils.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage
-    extends StatefulWidget {
-  const LoginPage(
+    extends StatelessWidget {
+  LoginPage(
       {super.key});
 
-  @override
-  State<LoginPage>
-      createState() =>
-          _LoginPageState();
-}
-
-class _LoginPageState
-    extends State<
-        LoginPage> {
   final loginKey =
       GlobalKey<FormState>();
-  final TextEditingController
-      _usernameController =
-      TextEditingController();
-  final TextEditingController
-      _passwordController =
-       TextEditingController();
 
+  final TextEditingController
+      usernameController =
+      TextEditingController();
+
+  final TextEditingController
+      passwordController =
+       TextEditingController();
 
   @override
   Widget build(
       BuildContext
           context) {
+    final apiProvider =
+        Provider.of<ApiProvider>(context);
+    final loginProvider =
+        Provider.of<LoginScreenProvider>(context);
+    
     return Scaffold(
       appBar:
           AppBar(
@@ -73,7 +75,7 @@ class _LoginPageState
                         ),
                         CustomTextFormField(
                           errortxt: "Invalid Mail ID",
-                          controller: _usernameController,
+                          controller: loginProvider.usernameController,
                           hintTxt: "Enter Email or Mob No.",
                         ),
                         Align(
@@ -97,7 +99,7 @@ class _LoginPageState
                         ),
                         CustomTextFormField(
                           errortxt: "Incorrect Password",
-                          controller: _passwordController,
+                          controller: loginProvider.passwordController,
                           hintTxt: "Enter Password",
                           obscureText: true,
                         ),
@@ -128,27 +130,16 @@ class _LoginPageState
                             ),
                           ],
                         ),
-                        GestureDetector(
-                          onTap: () async {
-                            // Logic for Login  
-                          },
-                          child: Container(
-                            margin: EdgeInsets.only(top: 20),
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: kLightGrey,
-                              border: Border.all(color: kblue, width: 2),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Center(
-                                child: CustomText(
-                              text: "Submit",
-                              clr: kwhite,
-                              fs: 20,
-                              fw: FontWeight.bold,
-                            )),
-                          ),
-                        ),
+                        CustomButton(onPressed: () {
+                          apiProvider.postData(
+                              UserModel(
+                                username: loginProvider.usernameController.text,
+                                password: loginProvider.passwordController.text,
+                              ),
+                              context);
+                          loginProvider.usernameController.clear();
+                          loginProvider.passwordController.clear();
+                        })
                       ],
                     ),
                   ],

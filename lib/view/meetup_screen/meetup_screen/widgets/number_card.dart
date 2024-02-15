@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:machine_test/screens/login_screen/widgets/text_style.dart';
-import 'package:machine_test/screens/meetup_screen/description_screen/description.dart';
+import 'package:machine_test/view/widgets/text_style.dart';
+import 'package:machine_test/view/meetup_screen/description_screen/description.dart';
 import 'package:machine_test/utils.dart';
 
 class NumberCard

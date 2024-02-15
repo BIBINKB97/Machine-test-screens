@@ -1,8 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:machine_test/screens/login_screen/widgets/text_style.dart';
-import 'package:machine_test/screens/meetup_screen/meetup_screen/widgets/carousel_image_container.dart';
+import 'package:machine_test/view/widgets/text_style.dart';
+import 'package:machine_test/view/meetup_screen/meetup_screen/widgets/carousel_image_container.dart';
 import 'package:machine_test/utils.dart';
 
 class CustomCarousel

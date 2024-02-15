@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:machine_test/screens/login_screen/widgets/text_style.dart';
-import 'package:machine_test/screens/meetup_screen/meetup_screen/widgets/carousel_slider.dart';
-import 'package:machine_test/screens/meetup_screen/meetup_screen/widgets/custom_card.dart';
-import 'package:machine_test/screens/meetup_screen/meetup_screen/widgets/number_card.dart';
-import 'package:machine_test/screens/meetup_screen/meetup_screen/widgets/search_bar.dart';
+import 'package:machine_test/view/widgets/text_style.dart';
+import 'package:machine_test/view/meetup_screen/meetup_screen/widgets/carousel_slider.dart';
+import 'package:machine_test/view/meetup_screen/meetup_screen/widgets/custom_card.dart';
+import 'package:machine_test/view/meetup_screen/meetup_screen/widgets/number_card.dart';
+import 'package:machine_test/view/meetup_screen/meetup_screen/widgets/search_bar.dart';
 
 class MeetUpPage
     extends StatelessWidget {

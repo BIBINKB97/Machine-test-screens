@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:machine_test/screens/meetup_screen/meetup_screen/meetup_page.dart';
+import 'package:machine_test/view/meetup_screen/meetup_screen/meetup_page.dart';
 import 'package:machine_test/utils.dart';
 
 class BottomNavBar
