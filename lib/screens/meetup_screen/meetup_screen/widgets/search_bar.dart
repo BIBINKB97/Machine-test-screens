@@ -22,14 +22,14 @@ class CustomSearchBar
           EdgeInsets.symmetric(horizontal: 10),
       child:
           Row(
+        
         children: [
-          IconButton(
-            icon: Icon(
-              Icons.search,
-              size: 30,
-            ),
-            onPressed: () {},
+          kWidth20,
+          Container(
+            width: 24,
+            decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/lens.png"))),
           ),
+          kWidth10,
           Expanded(
             child: TextField(
               decoration: InputDecoration(
@@ -39,9 +39,10 @@ class CustomSearchBar
               ),
             ),
           ),
-          IconButton(
-            icon: Icon(Icons.mic_none,size: 30,),
-            onPressed: () {},
+          Container(
+            margin: EdgeInsets.only(right: 10),
+            width: 26,
+            decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/mic.png"))),
           ),
         ],
       ),

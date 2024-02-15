@@ -4,9 +4,16 @@ import 'package:machine_test/utils.dart';
 
 class CustomCard
     extends StatelessWidget {
+  final String
+      title;
+  final String
+      meetups;
       final String circleImg;
   const CustomCard(
-      {super.key, required this.circleImg});
+      {super.key,
+      required this.circleImg,
+      required this.title,
+      required this.meetups});
 
   @override
   Widget build(
@@ -25,7 +32,7 @@ class CustomCard
         children: [
           Container(
             height: 170,
-            width: 290,
+            width: 280,
             decoration: BoxDecoration(border: Border.all(color: kgrey), borderRadius: BorderRadius.circular(10)),
             child: Column(children: [
               Padding(
@@ -38,11 +45,8 @@ class CustomCard
                       child: CircleAvatar(
                         radius: 18.7,
                         backgroundColor: kwhite,
-                        child: SizedBox(
-                          height: 22,
-                          child: Image(
-                            image: AssetImage(circleImg),
-                          ),
+                        child: Container(
+                          decoration: BoxDecoration(image: DecorationImage(fit: BoxFit.cover, image: AssetImage(circleImg))),
                         ),
                       ),
                     ),
@@ -51,14 +55,14 @@ class CustomCard
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
+                      children: [
                         CustomText(
-                          text: "Author",
+                          text: title,
                           fs: 20,
                           fw: FontWeight.w600,
                         ),
                         CustomText(
-                          text: "1,025 Meetups",
+                          text: meetups,
                           clr: kblack54,
                         )
                       ],

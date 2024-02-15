@@ -17,6 +17,7 @@ class MeetUpPage
     return Scaffold(
       appBar:
           AppBar(
+         
         leading: Icon(Icons.arrow_back_ios),
         title: CustomText(
           text: "Individual Meetup",
@@ -51,9 +52,21 @@ class MeetUpPage
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: const [
-              CustomCard(circleImg: "assets/images/feather.png"),
-              CustomCard(circleImg: "assets/images/film.png"),
-              CustomCard(circleImg: "assets/images/film.png"),
+              CustomCard(
+                circleImg: "assets/images/feather.png",
+                title: "Author",
+                meetups: "1,025 Meetups",
+              ),
+              CustomCard(
+                circleImg: "assets/images/film.png",
+                title: "Movies",
+                meetups: "2,125 Meetups",
+              ),
+              CustomCard(
+                circleImg: "assets/images/book.png",
+                title: "Books",
+                meetups: "708 Meetups",
+              ),
             ],
           ),
         ),

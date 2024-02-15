@@ -4,6 +4,8 @@ class CustomTextFormField
     extends StatelessWidget {
   final String
       hintTxt;
+  final String
+      errortxt;
   final TextEditingController?
       controller;
   final TextInputType
@@ -20,6 +22,7 @@ class CustomTextFormField
         false,
     Key?
         key,
+    required this.errortxt,
   }) : super(key: key);
 
   @override
@@ -27,6 +30,14 @@ class CustomTextFormField
       BuildContext
           context) {
     return TextFormField(
+
+      validator:
+          (value) {
+        if (value!.isEmpty) {
+          return errortxt;
+        }
+        return null;
+      },
       controller:
           controller,
       keyboardType:
