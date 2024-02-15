@@ -1,12 +1,10 @@
-
-// ignore_for_file: use_build_context_synchronously
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:machine_test/view/widgets/bottom_navbar/navbar.dart';
 import 'package:machine_test/controller/auth_controller/auth_controller.dart';
 import 'package:machine_test/model/user_model.dart';
 
-/// Register the login repository in this provider class 
+/// To Register the login AuthController in this provider class 
 class ApiProvider extends ChangeNotifier {
   final _authController = AuthController(Dio());
 
@@ -20,7 +18,7 @@ class ApiProvider extends ChangeNotifier {
           content: Text('Login successful'),
         ),
       );
-      Navigator.of(context).push(
+      Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (context) => const BottomNavBar(),
         ),
